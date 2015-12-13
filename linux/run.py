@@ -65,7 +65,7 @@ if __name__ == '__main__':
     serial_port_array.append("quit")
 
     print ""
-    print "This program will replace the firmware on a ESP8266 to the newest EspLight firmware"
+    print "This program will replace the firmware on an EspLight to the newest firmware"
 
     while 1:
         try:
@@ -75,7 +75,6 @@ if __name__ == '__main__':
         if yesno.lower() in ('yes','y'): break
         elif yesno.lower() in ('no','n'): quit()
 
-    print ""
     print ""
     print ".........................."
     for index, value in enumerate(serial_port_array):
@@ -89,6 +88,15 @@ if __name__ == '__main__':
 
     if port_number == len(serial_port_array)-1:
         quit()
+
+    print "You have selected " + selected_port
+    print "To set the EspLight in programming mode, follow the instructions:"
+    print "1. Push the Reset and AP button together"
+    print "2. Release Reset"
+    print "3. Release AP"
+    print ""
+    raw_input("Press Enter if you are ready for flashing")
+    print ""
 
     urllib.urlretrieve ("https://github.com/EspLight/EspLight-firmware/raw/master/bin/firmware.bin", "firmware.bin")
 
