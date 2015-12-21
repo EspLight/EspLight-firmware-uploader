@@ -102,3 +102,5 @@ if __name__ == '__main__':
 
     # run your program and collect the string output
     os.system(" esptool\esptool.exe -p " + selected_port + " write_flash -ff 80m -fm qio -fs 32m-c1 0x00000 firmware.bin")
+    
+    raw_input(" ")
